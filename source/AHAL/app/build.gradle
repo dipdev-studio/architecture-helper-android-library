@@ -16,7 +16,7 @@ android {
         targetSdkVersion project.ext.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
     }
@@ -42,31 +42,33 @@ android {
 dependencies {
 
     // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    kapt "com.android.databinding:compiler:$project.androidKotlinDatabindingVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    //kapt "com.android.databinding:compiler:$gradleVersion"
 
     // Tests
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    testImplementation "junit:junit:$project.junitVersion"
+    androidTestImplementation "androidx.test:runner:$project.androidXTestRunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$project.androidXTestEspressoVersion"
 
     // Android Support
-    implementation "com.android.support:appcompat-v7:$project.androidSupportVersion"
-    implementation "com.android.support:design:$project.androidSupportVersion"
+    implementation "androidx.appcompat:appcompat:$project.androidXSupportVersion"
+    implementation "com.google.android.material:material:$project.androidXSupportVersion"
 
-    // Adnroid Architecture Components
-    implementation "android.arch.lifecycle:viewmodel:$project.androidArchViewModeVersion"
-    implementation "android.arch.lifecycle:extensions:$project.androidArchViewModeVersion"
-    kapt "android.arch.lifecycle:compiler:$project.androidArchViewModeVersion"
+    // Android Architecture Components
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$project.androidXArchComponentVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$project.androidXArchComponentVersion"
+    kapt "androidx.lifecycle:lifecycle-compiler:$project.androidXArchComponentVersion"
 
     // rxJava
     implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroidVersion"
     implementation "io.reactivex.rxjava2:rxjava:$project.rxJavaVersion"
 
     // Dagger
+    implementation "com.google.dagger:dagger:$project.daggerVersion"
     implementation "com.google.dagger:dagger-android:$project.daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$project.daggerVersion"
-    kapt "com.google.dagger:dagger-android-processor:$project.daggerProcessorVersion"
+    kapt "com.google.dagger:dagger-compiler:$project.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$project.daggerVersion"
 
     // Annimon Stream
     implementation "com.annimon:stream:$project.annimonStreamVersion"

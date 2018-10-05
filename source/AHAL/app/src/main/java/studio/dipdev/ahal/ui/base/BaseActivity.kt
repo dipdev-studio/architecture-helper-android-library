@@ -1,0 +1,57 @@
+package studio.dipdev.ahal.ui.base
+
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Build
+import android.os.Bundle
+import android.transition.Explode
+import android.view.Window
+import androidx.annotation.IdRes
+import androidx.appcompat.app.AppCompatActivity
+
+@SuppressLint("Registered")
+abstract class BaseActivity : AppCompatActivity() {
+
+    @SuppressLint("CommitTransaction")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            with(window) {
+                requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
+                window.allowEnterTransitionOverlap = true
+                exitTransition = Explode()
+            }
+        }
+    }
+
+    fun navigateTo(clazz: Class<*>, clear: Boolean) {
+        startActivity(getIntent(clazz, clear, null))
+    }
+
+    fun navigateTo(clazz: Class<*>, clear: Boolean, extras: HashMap<String, String>) {
+        startActivity(getIntent(clazz, clear, extras))
+    }
+
+    fun switchFragment(@IdRes resourceId: Int, fragment: BaseFragment, replace: Boolean, backStack: Boolean) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+
+        if (replace) fragmentTransaction.replace(resourceId, fragment)
+        else fragmentTransaction.add(resourceId, fragment)
+        if (backStack) fragmentTransaction.addToBackStack(null)
+
+        fragmentTransaction.commit()
+    }
+
+    private fun getIntent(clazz: Class<*>, clear: Boolean, extras: HashMap<String, String>?): Intent {
+        val intent = Intent(this, clazz)
+        if (clear) intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        if (extras != null) {
+            for ((key, value) in extras) {
+                intent.putExtra(key, value)
+            }
+        }
+        return intent
+    }
+
+    abstract fun handleError(error: Throwable?)
+}
