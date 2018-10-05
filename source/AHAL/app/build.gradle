@@ -41,6 +41,8 @@ android {
 
 dependencies {
 
+    implementation project(":domain")
+
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     //kapt "com.android.databinding:compiler:$gradleVersion"
