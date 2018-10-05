@@ -1,0 +1,50 @@
+buildscript {
+    ext.kotlin_version = '1.2.71'
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+
+    project.ext {
+        compileSdkVersion = 28
+        buildToolsVersion = "28.0.2"
+        minSdkVersion = 16
+        targetSdkVersion = 28
+        androidSupportVersion = "28.0.0"
+        androidArchViewModeVersion = "1.1.1"
+        androidKotlinDatabindingVersion = "3.0.0-beta6"
+        daggerVersion = "2.17"
+        daggerProcessorVersion = "2.12"
+        rxAndroidVersion = "2.0.1"
+        rxJavaVersion = "2.1.8"
+        annimonStreamVersion = "1.1.9"
+        glideVersion = "3.5.2"
+    }
+
+    configurations.all {
+        // Support only one version
+        resolutionStrategy.force "com.android.support:appcompat-v7:$project.androidSupportVersion"
+        resolutionStrategy.force "com.android.support:cardview-v7:$project.androidSupportVersion"
+        resolutionStrategy.force "com.android.support:customtabs:$project.androidSupportVersion"
+        resolutionStrategy.force "com.android.support:support-media-compat:$project.androidSupportVersion"
+        resolutionStrategy.force "com.android.support:support-v4:$project.androidSupportVersion"
+        resolutionStrategy.force "com.android.support:support-annotations:$project.androidSupportVersion"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
