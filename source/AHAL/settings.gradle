@@ -1,0 +1,1 @@
+include ':ahal-app', ':ahal-domain', ':ahal-data'
