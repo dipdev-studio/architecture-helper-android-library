@@ -15,7 +15,7 @@ android {
         minSdkVersion project.ext.minSdkVersion
         targetSdkVersion project.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.0 Alpha 1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -40,9 +40,6 @@ android {
 }
 
 dependencies {
-
-    implementation project(':ahal-domain')
-
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     //kapt "com.android.databinding:compiler:$gradleVersion"
