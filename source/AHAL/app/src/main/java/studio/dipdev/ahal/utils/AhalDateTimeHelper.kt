@@ -3,7 +3,7 @@ package studio.dipdev.ahal.utils
 import java.text.SimpleDateFormat
 import java.util.*
 
-class DateTimeUtils {
+class AhalDateTimeHelper {
 
     fun format24Hour(time: Long, duration: Long, nextDay: String): String {
         val calendar1 = Calendar.getInstance()

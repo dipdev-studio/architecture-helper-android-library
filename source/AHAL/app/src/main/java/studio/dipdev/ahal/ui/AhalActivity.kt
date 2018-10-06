@@ -1,4 +1,4 @@
-package studio.dipdev.ahal.ui.base
+package studio.dipdev.ahal.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -10,7 +10,7 @@ import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 
 @SuppressLint("Registered")
-abstract class BaseActivity : AppCompatActivity() {
+abstract class AhalActivity : AppCompatActivity() {
 
     @SuppressLint("CommitTransaction")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +32,7 @@ abstract class BaseActivity : AppCompatActivity() {
         startActivity(getIntent(clazz, clear, extras))
     }
 
-    fun switchFragment(@IdRes resourceId: Int, fragment: BaseFragment, replace: Boolean, backStack: Boolean) {
+    fun switchFragment(@IdRes resourceId: Int, fragment: AhalFragment, replace: Boolean, backStack: Boolean) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
 
         if (replace) fragmentTransaction.replace(resourceId, fragment)

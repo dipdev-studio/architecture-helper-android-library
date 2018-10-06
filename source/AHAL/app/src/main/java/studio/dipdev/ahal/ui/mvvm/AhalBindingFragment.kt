@@ -1,4 +1,4 @@
-package studio.dipdev.ahal.ui.base.mvvm
+package studio.dipdev.ahal.ui.mvvm
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -10,13 +10,12 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProviders
-import studio.dipdev.ahal.ui.base.BaseFragment
-import studio.dipdev.ahal.BR
+import studio.dipdev.ahal.ui.AhalFragment
 
 @SuppressLint("ValidFragment")
-open abstract class BaseBindingFragment<B : ViewDataBinding, VM :
-BaseViewModel<M>, M : BaseModel>(@LayoutRes private val layoutId: Int, private val viewModelClass: Class<VM>) :
-        BaseFragment() {
+open abstract class AhalBindingFragment<B : ViewDataBinding, VM :
+AhalViewModel<M>, M : AhalModel>(@LayoutRes private val layoutId: Int, private val viewModelClass: Class<VM>) :
+        AhalFragment() {
 
     private lateinit var binding: B
     private lateinit var viewModel: VM

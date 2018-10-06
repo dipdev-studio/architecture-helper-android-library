@@ -1,11 +1,11 @@
-package studio.dipdev.ahal.ui.base.mvvm
+package studio.dipdev.ahal.ui.mvvm
 
 import android.view.View
 import androidx.databinding.BaseObservable
 import androidx.databinding.ObservableBoolean
 import com.annimon.stream.Stream
 
-open class BaseModel {
+open class AhalModel {
 
     var loading = ObservableBoolean()
 

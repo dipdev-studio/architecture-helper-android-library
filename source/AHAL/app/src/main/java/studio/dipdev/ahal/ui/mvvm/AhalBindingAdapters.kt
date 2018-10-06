@@ -1,4 +1,4 @@
-package studio.dipdev.ahal.ui.base.mvvm
+package studio.dipdev.ahal.ui.mvvm
 
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.textfield.TextInputLayout
 
 
-object BindingAdapters {
+object AhalBindingAdapters {
 
     @JvmStatic
     @BindingAdapter("app:src")

@@ -1,4 +1,4 @@
-package studio.dipdev.ahal.ui.base.mvvm
+package studio.dipdev.ahal.ui.mvvm
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,26 +8,26 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModel
-import studio.dipdev.ahal.ui.base.BaseActivity
-import studio.dipdev.ahal.ui.base.BaseFragment
+import studio.dipdev.ahal.ui.AhalActivity
+import studio.dipdev.ahal.ui.AhalFragment
 
 
-abstract class BaseViewModel<M : BaseModel>(val model: M) : ViewModel(), IBaseViewModel, LifecycleObserver {
+abstract class AhalViewModel<M : AhalModel>(val model: M) : ViewModel(), IAhalViewModel, LifecycleObserver {
 
     @SuppressLint("StaticFieldLeak")
-    internal lateinit var activity: BaseActivity
-    internal var fragment: BaseFragment? = null
+    internal lateinit var activity: AhalActivity
+    internal var fragment: AhalFragment? = null
 
-    open fun init(activity: BaseActivity) {
+    open fun init(activity: AhalActivity) {
         this.activity = activity
         activity.lifecycle.addObserver(this)
     }
 
-    open fun init(activity: FragmentActivity, fragment: BaseFragment) {
-        if (activity is BaseActivity) {
+    open fun init(activity: FragmentActivity, fragment: AhalFragment) {
+        if (activity is AhalActivity) {
             this.activity = activity
         } else {
-            throw RuntimeException("Activity not is BaseActivity")
+            throw RuntimeException("Activity not is AhalActivity")
         }
         this.fragment = fragment
         activity.lifecycle.addObserver(this)

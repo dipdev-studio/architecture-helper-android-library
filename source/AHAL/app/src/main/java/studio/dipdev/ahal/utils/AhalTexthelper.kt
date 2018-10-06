@@ -1,6 +1,6 @@
 package studio.dipdev.ahal.utils
 
-class TextUtils {
+class AhalTexthelper {
 
 
     fun isValidEmail(target: CharSequence?): Boolean {

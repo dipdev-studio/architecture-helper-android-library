@@ -1,4 +1,4 @@
-package studio.dipdev.ahal.ui.base.mvvm
+package studio.dipdev.ahal.ui.mvvm
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,14 +7,13 @@ import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import studio.dipdev.ahal.ui.base.BaseActivity
-import studio.dipdev.ahal.BR
+import studio.dipdev.ahal.ui.AhalActivity
 
 
 @SuppressLint("Registered")
-open abstract class BaseBindingActivity<B : ViewDataBinding, VM :
-BaseViewModel<M>, M : BaseModel>(@LayoutRes private val layoutId: Int, private val viewModelClass: Class<VM>) :
-        BaseActivity() {
+open abstract class AhalBindingActivity<B : ViewDataBinding, VM :
+AhalViewModel<M>, M : AhalModel>(@LayoutRes private val layoutId: Int, private val viewModelClass: Class<VM>) :
+        AhalActivity() {
     private lateinit var binding: B
     private lateinit var viewModel: VM
 
