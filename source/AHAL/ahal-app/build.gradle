@@ -41,7 +41,7 @@ android {
 
 dependencies {
 
-    implementation project(":domain")
+    implementation project(':ahal-domain')
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"

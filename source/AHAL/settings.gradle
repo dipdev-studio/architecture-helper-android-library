@@ -1,1 +1,1 @@
-include ':app', ':domain', ':data'
+include ':ahal-app', ':ahal-domain', ':ahal-data'
