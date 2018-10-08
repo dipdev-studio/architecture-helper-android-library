@@ -11,7 +11,7 @@ import studio.dipdev.ahal.ui.AhalActivity
 
 
 @SuppressLint("Registered")
-open abstract class AhalBindingActivity<B : ViewDataBinding, VM :
+public open abstract class AhalBindingActivity<B : ViewDataBinding, VM :
 AhalViewModel<M>, M : AhalModel>(@LayoutRes private val layoutId: Int, private val viewModelClass: Class<VM>) :
         AhalActivity() {
     private lateinit var binding: B

@@ -5,7 +5,7 @@ import androidx.databinding.BaseObservable
 import androidx.databinding.ObservableBoolean
 import com.annimon.stream.Stream
 
-open class AhalModel {
+public open class AhalModel {
 
     var loading = ObservableBoolean()
 

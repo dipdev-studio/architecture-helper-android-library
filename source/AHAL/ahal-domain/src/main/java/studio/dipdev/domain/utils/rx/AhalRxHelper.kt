@@ -15,7 +15,7 @@ import io.reactivex.schedulers.Schedulers
 import org.reactivestreams.Subscription
 import java.util.*
 
-class AhalRxHelper internal constructor(lifecycle: Lifecycle) : IAhalRxHelper, LifecycleObserver {
+public open class AhalRxHelper constructor(lifecycle: Lifecycle) : IAhalRxHelper, LifecycleObserver {
     private val subscriptionContainer = ArrayList<Subscription>()
     private var compositeDisposable: CompositeDisposable? = null
 

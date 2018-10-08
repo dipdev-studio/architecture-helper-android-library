@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import com.google.gson.Gson
 
-internal open class AhalPreferenceHelper(private val context: Context?) : IAhalPreferenceHelper {
+public open class AhalPreferenceHelper(private val context: Context?) : IAhalPreferenceHelper {
 
     private val gson = Gson()
     private var onPreferenceChangesCallback: IAhalPreferenceHelper.OnPreferenceChanges? = null
@@ -80,6 +80,10 @@ internal open class AhalPreferenceHelper(private val context: Context?) : IAhalP
 
     fun getString(mKey: String, mDefValue: String): String? {
         return provideSharedPreferences().getString(mKey, mDefValue)
+    }
+
+    fun remove(mKey: String) {
+        provideSharedPreferencesEditor().remove(mKey).apply()
     }
 
     fun <T> setEntity(mKey: String, mValue: Class<T>) {

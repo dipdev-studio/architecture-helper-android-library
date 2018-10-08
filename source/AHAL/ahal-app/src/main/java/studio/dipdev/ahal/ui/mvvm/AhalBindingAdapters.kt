@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.textfield.TextInputLayout
 
 
-object AhalBindingAdapters {
+public object AhalBindingAdapters {
 
     @JvmStatic
     @BindingAdapter("app:src")

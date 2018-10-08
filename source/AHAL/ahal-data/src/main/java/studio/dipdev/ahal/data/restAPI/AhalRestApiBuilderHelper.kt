@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-open class AhalRestApiBuilderHelper {
+public open class AhalRestApiBuilderHelper {
     private var retrofit: Retrofit? = null
     private val interceptors: MutableList<Interceptor> = ArrayList()
     private val gsonTypeAdapters: MutableMap<Class<*>, Any> = HashMap()

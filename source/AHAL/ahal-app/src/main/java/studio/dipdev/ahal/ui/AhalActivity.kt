@@ -10,7 +10,7 @@ import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 
 @SuppressLint("Registered")
-open abstract class AhalActivity : AppCompatActivity() {
+public open abstract class AhalActivity : AppCompatActivity() {
 
     @SuppressLint("CommitTransaction")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,4 +54,5 @@ open abstract class AhalActivity : AppCompatActivity() {
     }
 
     abstract fun handleError(error: Throwable?)
+
 }

@@ -3,7 +3,7 @@ package studio.dipdev.ahal.data.restAPI
 import com.google.gson.Gson
 import retrofit2.HttpException
 
-open class AhalRestApiErrorHandler<T> : IAhalRestApiErrorHandler<T> {
+public open class AhalRestApiErrorHandler<T> : IAhalRestApiErrorHandler<T> {
     private val gson: Gson = Gson()
 
     override fun processError(throwable: Throwable, entity: Class<T>): Throwable {

@@ -1,6 +1,6 @@
 package studio.dipdev.ahal.data.restAPI
 
-open class AhalRestApiHelper<T> {
+public open class AhalRestApiHelper<T> {
 
-   protected val errorHandler: IAhalRestApiErrorHandler<T> = AhalRestApiErrorHandler()
+    protected val errorHandler: IAhalRestApiErrorHandler<T> = AhalRestApiErrorHandler()
 }

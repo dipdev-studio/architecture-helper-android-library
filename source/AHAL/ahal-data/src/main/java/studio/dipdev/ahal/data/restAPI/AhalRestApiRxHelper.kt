@@ -4,7 +4,7 @@ import io.reactivex.Completable
 import io.reactivex.Single
 
 
-open class AhalRestApiRxHelper<T>(private val entity: Class<T>) : AhalRestApiHelper<T>() {
+public open class AhalRestApiRxHelper<T>(private val entity: Class<T>) : AhalRestApiHelper<T>() {
 
     fun <TResponse> processResponse(upstream: Single<TResponse>): Single<TResponse> {
         return upstream

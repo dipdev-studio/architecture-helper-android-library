@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import studio.dipdev.ahal.ui.AhalFragment
 
 @SuppressLint("ValidFragment")
-open abstract class AhalBindingFragment<B : ViewDataBinding, VM :
+public open abstract class AhalBindingFragment<B : ViewDataBinding, VM :
 AhalViewModel<M>, M : AhalModel>(@LayoutRes private val layoutId: Int, private val viewModelClass: Class<VM>) :
         AhalFragment() {
 
@@ -43,7 +43,7 @@ AhalViewModel<M>, M : AhalModel>(@LayoutRes private val layoutId: Int, private v
         return view
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         viewModel.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
     }
