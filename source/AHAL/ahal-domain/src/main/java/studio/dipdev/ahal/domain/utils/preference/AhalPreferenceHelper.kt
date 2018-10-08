@@ -1,4 +1,4 @@
-package studio.dipdev.domain.utils.preference
+package studio.dipdev.ahal.domain.utils.preference
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -86,15 +86,15 @@ public open class AhalPreferenceHelper(private val context: Context?) : IAhalPre
         provideSharedPreferencesEditor().remove(mKey).apply()
     }
 
-    fun <T> setEntity(mKey: String, mValue: Class<T>) {
+    fun <T> setEntity(mKey: String, mValue: T) {
         val json = gson.toJson(mValue)
         setString(mKey, json)
     }
 
-    fun <T> getEntity(mKey: String, mValue: Class<T>): Class<T>? {
+    fun <T> getEntity(mKey: String, mValue: Class<T>): T? {
         val json = getString(mKey, "")
         return try {
-            gson.fromJson(json, mValue::class.java)
+            gson.fromJson(json, mValue)
         } catch (e: Exception) {
             null
         }

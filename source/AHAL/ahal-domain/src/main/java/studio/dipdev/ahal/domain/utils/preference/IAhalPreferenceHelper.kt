@@ -1,6 +1,6 @@
-package studio.dipdev.domain.utils.preference
+package studio.dipdev.ahal.domain.utils.preference
 
-interface IAhalPreferenceHelper {
+public open interface IAhalPreferenceHelper {
 
     fun setPreferenceChangesCallback(callback: OnPreferenceChanges)
     fun removePreferenceChangesCallback()

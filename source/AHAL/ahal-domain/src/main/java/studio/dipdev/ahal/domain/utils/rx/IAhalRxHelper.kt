@@ -1,11 +1,11 @@
-package studio.dipdev.domain.utils.rx
+package studio.dipdev.ahal.domain.utils.rx
 
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.Single
 
-interface IAhalRxHelper {
+public open interface IAhalRxHelper {
     fun setup(upstream: Completable): Completable
 
     fun <T> setup(upstream: Observable<T>): Observable<T>

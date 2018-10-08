@@ -1,4 +1,4 @@
-package studio.dipdev.domain.utils.rx
+package studio.dipdev.ahal.domain.utils.rx
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver

@@ -1,4 +1,4 @@
-package studio.dipdev.domain;
+package studio.dipdev.ahal.domain;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("studio.dipdev.domain.test", appContext.getPackageName());
+        assertEquals("studio.dipdev.ahal.domain.test", appContext.getPackageName());
     }
 }

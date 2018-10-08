@@ -1,4 +1,4 @@
-package studio.dipdev.domain;
+package studio.dipdev.ahal.domain;
 
 import org.junit.Test;
 

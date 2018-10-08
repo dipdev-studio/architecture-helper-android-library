@@ -2,17 +2,13 @@ package studio.dipdev.ahal.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Build
-import android.os.Bundle
-import android.transition.Explode
-import android.view.Window
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 
 @SuppressLint("Registered")
 public open abstract class AhalActivity : AppCompatActivity() {
 
-    @SuppressLint("CommitTransaction")
+/*    @SuppressLint("CommitTransaction")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -22,7 +18,7 @@ public open abstract class AhalActivity : AppCompatActivity() {
                 exitTransition = Explode()
             }
         }
-    }
+    }*/
 
     fun navigateTo(clazz: Class<*>, clear: Boolean) {
         startActivity(getIntent(clazz, clear, null))
