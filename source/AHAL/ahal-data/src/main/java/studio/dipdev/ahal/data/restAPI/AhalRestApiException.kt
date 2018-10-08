@@ -1,7 +1,7 @@
 package studio.dipdev.ahal.data.restAPI
 
 
-data class AhalRestApiException<T>(val message: String?, val cause: Throwable?, val apiException: T) {
+public data class AhalRestApiException<T>(val message: String?, val cause: Throwable?, val apiException: T) {
 
     val error = ApiError(message, cause)
 

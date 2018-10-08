@@ -12,7 +12,7 @@ import studio.dipdev.ahal.ui.AhalActivity
 import studio.dipdev.ahal.ui.AhalFragment
 
 
-abstract class AhalViewModel<M : AhalModel>(val model: M) : ViewModel(), IAhalViewModel, LifecycleObserver {
+open abstract class AhalViewModel<M : AhalModel>(val model: M) : ViewModel(), IAhalViewModel, LifecycleObserver {
 
     @SuppressLint("StaticFieldLeak")
     internal lateinit var activity: AhalActivity
