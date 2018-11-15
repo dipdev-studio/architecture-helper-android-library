@@ -20,4 +20,5 @@ public open class AhalRestApiRxHelper<T>(private val entity: Class<T>) : AhalRes
         return upstream
                 .onErrorResumeNext { throwable -> Completable.error(errorHandler.processError(throwable, entity)) }
     }
+
 }
